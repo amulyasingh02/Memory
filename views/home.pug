@@ -1,0 +1,30 @@
+html   
+    head
+        title Memory 
+        style 
+            include home.css 
+
+    body 
+        script 
+            include home.js
+
+        nav#navbar.navbar 
+            ul
+                li 
+                    a(href='/') Gallery
+                li 
+                    a(href='/upload') Upload
+        
+        main#main.main 
+            section#info.info 
+                h1 Enter the Details to access memory 
+                form(action="/", method="post")
+                    input#usr1.usr2(type="tel",placeholder="Phone number",maxlength=10,name="usr1")
+                    input#usr2.usr2(type="tel",placeholder="Phone number",maxlength=10,name="usr2")
+                    button#submit.submit(type="submit") View
+
+            section.imgview#imgview 
+                each image in images    
+                    img(src=image, alt="not av")
+                    script console.log(image);
+
